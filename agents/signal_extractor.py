@@ -20,10 +20,12 @@ def run_signal_extraction(news_text: str, prompt_text: str) -> dict:
         template=prompt_text,
         input_variables=["news_text"]
     )
-
+    
     response = llm.invoke(
         prompt.format(news_text=news_text)
     )
+    print(prompt.format(news_text=news_text))
+
     raw = response.content.strip()
     if not raw:
         raise ValueError("Empty response from LLM. Check API key or model name.")
@@ -32,6 +34,7 @@ def run_signal_extraction(news_text: str, prompt_text: str) -> dict:
 
 
 if __name__ == "__main__":
+    
     sample_news = """
     The U.S. Federal Reserve indicated that it may begin cutting interest rates
     later this year as inflation shows signs of easing, according to statements

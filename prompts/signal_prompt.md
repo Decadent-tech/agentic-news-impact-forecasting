@@ -20,6 +20,6 @@ Extract the following fields:
 - urgency (low / medium / high)
 
 News Text:
-{{news_text}}
+{news_text}
 
 Output JSON:
